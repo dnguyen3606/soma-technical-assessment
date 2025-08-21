@@ -7,6 +7,7 @@ export async function GET() {
       orderBy: {
         createdAt: 'desc',
       },
+      include: { dependencies: true },
     });
     return NextResponse.json(todos);
   } catch (error) {
@@ -16,13 +17,17 @@ export async function GET() {
 
 export async function POST(request: Request) {
   try {
-    const { title } = await request.json();
+    const { title, due } = await request.json();
     if (!title || title.trim() === '') {
       return NextResponse.json({ error: 'Title is required' }, { status: 400 });
     }
+    if (!due) {
+      return NextResponse.json({ error: 'Due date is required' }, { status: 400 });
+    }
     const todo = await prisma.todo.create({
       data: {
-        title,
+        title: title,
+        due: new Date(due),
       },
     });
     return NextResponse.json(todo, { status: 201 });
