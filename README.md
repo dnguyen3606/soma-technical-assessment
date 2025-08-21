@@ -78,9 +78,9 @@ As for the broad strokes of my solution:
    
 Here are some screenshots, though there are more in `assets` if you want to see more.
 
-![App Screenshot][./assets/Screenshot 2025-08-21 140434.png]
+![App Screenshot](./assets/Screenshot%202025-08-21%20140434.png)
 
-![App Screenshot][./assets/Screenshot 2025-08-21 140331.png]
+![App Screenshot](./assets/Screenshot%202025-08-21%20140331.png)
 
 As for future work, there are quite a few things I would improve on this assessment:
 - Modals could be adapted to scroll. Currently too many tasks or excessively long task titles cause clickable options to go off the screen.
